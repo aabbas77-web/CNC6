@@ -1,0 +1,641 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0040)http://www.logix4u.net/parallelport1.htm -->
+<HTML><HEAD><TITLE>PARALLEL PORT INTERFACING TUTORIAL - Logix4u</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META 
+content="parallel ,port ,interfacing ,windows , NT ,2000 , lpt , driver , inp , outp , inpout , VB , visual basic , vc++ , visual c++ , dll , xp" 
+name=keywords>
+<META 
+content="new inpout32.dll for windows nt / 2000 . this dll will solve the problems aring from the use of Inp() and Outp() functions in WIN NT" 
+name=description>
+<STYLE type=text/css>BODY {
+	FONT-SIZE: xx-small; BACKGROUND: #eeeeee; COLOR: black; FONT-FAMILY: Arial
+}
+.hand {
+	CURSOR: hand
+}
+A:link {
+	COLOR: blue; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: blue; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: red; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+.1a {
+	FONT-WEIGHT: bold; FONT-SIZE: 18pt; COLOR: white; TEXT-DECORATION: none
+}
+</STYLE>
+
+<SCRIPT language=JavaScript>
+	<!--
+		function Menu(wich)
+		{
+			// silver is the background color of the mouseover of the menu
+			wich.style.background = 'silver';
+			// Blue is the color of the text of the mouseoverof the menu
+			wich.style.color = 'blue';
+		}
+		function MenuOut(wich)
+		{
+			wich.style.background = '';
+			wich.style.color = 'black';
+		}
+		function ChangePage(url)
+		{
+			window.location.href = url;
+		}
+	//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY bottomMargin=0 leftMargin=1 topMargin=1 rightMargin=1 marginheight="1" 
+marginwidth="1">
+<TABLE cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width=105>
+      <TABLE 
+      style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-SIZE: xx-small; BACKGROUND: #fafafa; BORDER-LEFT: black 1px solid; COLOR: black; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Arial" 
+      cellSpacing=0 cellPadding=5 width=110 border=1>
+        <TBODY>
+        <TR>
+          <TD 
+          style="FONT-WEIGHT: bold; FONT-SIZE: 9pt; BACKGROUND: #2f97cf repeat-y right 50%; COLOR: white; BORDER-BOTTOM: black 1px solid">Contents 
+          </TD></TR>
+        <TR>
+          <TD class=hand id=m10 onmouseover=Menu(m10) 
+          onclick="ChangePage('index.htm')" onmouseout=MenuOut(m10)>Home</TD></TR>
+        <TR>
+          <TD class=hand id=m20 onmouseover=Menu(m20) 
+          onclick="ChangePage('parallelport1.htm')" 
+            onmouseout=MenuOut(m20)>Parallel Port</TD></TR>
+        <TR>
+          <TD class=hand id=m30 onmouseover=Menu(m30) 
+          onclick="ChangePage('dll_tutorial1.htm')" 
+            onmouseout=MenuOut(m30)>DLL Tutorial</TD></TR>
+        <TR>
+          <TD class=hand id=m60 onmouseover=Menu(m60) 
+          onclick="ChangePage('inpout32.htm')" 
+          onmouseout=MenuOut(m60)>Inpout32</TD></TR>
+        <TR>
+          <TD class=hand id=m50 onmouseover=Menu(m50) 
+          onclick="ChangePage('/logixstore/activex.php')" 
+          onmouseout=MenuOut(m50)><FONT color=red size=2><B>Download/Buy 
+            Activex Controls</B></FONT></TD></TR>
+        <TR>
+          <TD><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></TD></TR>
+        <TR>
+          <TD>
+            <CENTER><A 
+            href="http://www.fineclicks.com/fc2/referral.cfm?refhost=logix4u"><IMG 
+            height=125 
+            src="PARALLEL PORT INTERFACING TUTORIAL - Logix4u_files/125x125_2.gif" 
+            width=125 border=0></A> </CENTER></TD></TR></TBODY></TABLE></TD>
+    <TD style="FONT-SIZE: xx-small; FONT-FAMILY: Arial" vAlign=top>
+      <TABLE 
+      style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-SIZE: xx-small; BACKGROUND: #2f97cf; BORDER-LEFT: black 1px solid; COLOR: black; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Arial" 
+      cellSpacing=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD>
+            <P class=1a align=left>Logix4u 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
+            href="http://www.logix4u.net/">http://www.logix4u.net/</A></P></TD></TR></TBODY></TABLE>
+      <P>
+      <TABLE 
+      style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-SIZE: 10pt; BACKGROUND: #fafafa; BORDER-LEFT: black 1px solid; COLOR: black; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Arial" 
+      cellSpacing=0 cellPadding=5 width="100%">
+        <TBODY>
+        <TR>
+          <TD 
+          style="FONT-WEIGHT: bold; FONT-SIZE: 10pt; BACKGROUND: #2f97cf repeat-y right 50%; COLOR: white; BORDER-BOTTOM: black 1px solid">Parallel 
+            port Interfacing Tutorial </TD></TR>
+        <TR>
+          <TD><FONT 
+            size=2><B><U>Introduction</U></B></FONT><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Parallel port is a simple and inexpensive tool for building computer 
+            controlled devices and projects. The simplicity and ease of 
+            programming makes parallel port popular in electronics hobbyist 
+            world. The parallel port is often used in Computer controlled 
+            robots, Atmel/PIC programmers, home automation, ...etc... Here a 
+            simple tutorial on parallel port interfacing and programming with 
+            some 
+            examples.<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Everybody knows what is parallel port, where it can be found, and 
+            for what it is being used. the primary use of parallel port is to 
+            connect printers to computer and is specifically designed for this 
+            purpose. Thus it is often called as printer Port or Centronics port 
+            (this name came from a popular printer manufacturing company 
+            'Centronics' who devised some standards for parallel port). You can 
+            see the parallel port connector in the rear panel of your PC. It is 
+            a 25 pin female (DB25) connector (to which printer is connected). On 
+            almost all the PCs only one parallel port is present, but you can 
+            add more by buying and inserting ISA/PCI parallel port cards. 
+            <BR><BR><FONT size=2><B><U>Parallel port 
+            modes</U></B></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            The <A href="http://www.fapo.com/ieee1284.htm">IEEE 1284 
+            Standard</A> which has been published in 1994 defines five modes of 
+            data transfer for parallel port. They 
+            are,<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1) Compatibility Mode 
+            <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2) Nibble 
+            Mode<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3) Byte 
+            Mode<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4) 
+            EPP<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5) 
+            ECP<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            The programs, circuits and other information found in this tutorial 
+            are compatible to almost all types of parallel ports and can be used 
+            without any problems (Not tested, just because of confidence ! ). 
+            More information on parallel port operating modes can be found <A 
+            href="http://www.fapo.com/ieee1284.htm">here</A>. <BR><BR><FONT 
+            size=2><B><U>Hardware</U></B></FONT><BR>The pin outs of DB25 
+            connector is shown in the picture 
+            below<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            &nbsp;&nbsp;&nbsp;&nbsp; <IMG 
+            src="PARALLEL PORT INTERFACING TUTORIAL - Logix4u_files/parallel.gif"> 
+            <BR><BR>The lines in DB25 connector are divided in to three groups, 
+            they are<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1) Data lines (data 
+            bus)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2) Control 
+            lines<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3) Status 
+            lines<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            As the name refers , data is transferred over data lines , Control 
+            lines are used to control the peripheral and of course , the 
+            peripheral returns status signals back computer through Status 
+            lines. These lines are connected to Data, Control And Status 
+            registers internally . The details of parallel port signal lines are 
+            given below<BR><BR>
+            <CENTER>
+            <TABLE height=30 cellSpacing=1 width=50 border=1 frame=border>
+              <TBODY>
+              <TR>
+                <TD><B>Pin No (DB25)</B></TD>
+                <TD><B>Signal name</B></TD>
+                <TD><B>Direction</B></TD>
+                <TD><B>Register - bit</B></TD>
+                <TD><B>Inverted</B></TD></TR>
+              <TR>
+                <TD>
+                  <CENTER>1</CENTER></TD>
+                <TD>
+                  <CENTER>nStrobe</CENTER></TD>
+                <TD>
+                  <CENTER>Out</CENTER></TD>
+                <TD>
+                  <CENTER>Control-0</CENTER></TD>
+                <TD>
+                  <CENTER>Yes</CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <CENTER>2</CENTER></TD>
+                <TD>
+                  <CENTER>Data0</CENTER></TD>
+                <TD>
+                  <CENTER>In/Out</CENTER></TD>
+                <TD>
+                  <CENTER>Data-0</CENTER></TD>
+                <TD>
+                  <CENTER>No</CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <CENTER>3</CENTER></TD>
+                <TD>
+                  <CENTER>Data1
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>In/Out
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Data-1
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>No
+                  <CENTER></CENTER></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <CENTER>4</CENTER></TD>
+                <TD>
+                  <CENTER>Data2
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>In/Out
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Data-2
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>No
+                  <CENTER></CENTER></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <CENTER>5</CENTER></TD>
+                <TD>
+                  <CENTER>Data3
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>In/Out
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Data-3
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>No
+                  <CENTER></CENTER></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <CENTER>6</CENTER></TD>
+                <TD>
+                  <CENTER>Data4
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>In/Out
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Data-4
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>No
+                  <CENTER></CENTER></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <CENTER>7</CENTER></TD>
+                <TD>
+                  <CENTER>Data5
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>In/Out
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Data-5
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>No
+                  <CENTER></CENTER></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <CENTER>8</CENTER></TD>
+                <TD>
+                  <CENTER>Data6
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>In/Out
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Data-6
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>No
+                  <CENTER></CENTER></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <CENTER>9</CENTER></TD>
+                <TD>
+                  <CENTER>Data7
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>In/Out
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Data-7
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>No
+                  <CENTER></CENTER></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <CENTER>10</CENTER></TD>
+                <TD>
+                  <CENTER>nAck
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>In
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Status-6
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>No
+                  <CENTER></CENTER></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <CENTER>11</CENTER></TD>
+                <TD>
+                  <CENTER>Busy
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>In
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Status-7
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Yes
+                  <CENTER></CENTER></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <CENTER>12</CENTER></TD>
+                <TD>
+                  <CENTER>Paper-Out 
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>In
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Status-5
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>No
+                  <CENTER></CENTER></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <CENTER>13</CENTER></TD>
+                <TD>
+                  <CENTER>Select
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>In
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Status-4
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>No
+                  <CENTER></CENTER></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <CENTER>14</CENTER></TD>
+                <TD>
+                  <CENTER>Linefeed
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Out
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Control-1
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Yes
+                  <CENTER></CENTER></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <CENTER>15</CENTER></TD>
+                <TD>
+                  <CENTER>nError
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>In
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Status-3
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>No
+                  <CENTER></CENTER></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <CENTER>16</CENTER></TD>
+                <TD>
+                  <CENTER>nInitialize
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Out
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Control-2
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>No
+                  <CENTER></CENTER></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <CENTER>17</CENTER></TD>
+                <TD>
+                  <CENTER>nSelect-Printer 
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Out
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Control-3
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>Yes
+                  <CENTER></CENTER></CENTER></TD></TR>
+              <TR>
+                <TD>
+                  <CENTER>18-25</CENTER></TD>
+                <TD>
+                  <CENTER>Ground
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>-
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>-
+                  <CENTER></CENTER></CENTER></TD>
+                <TD>
+                  <CENTER>-
+                  <CENTER></CENTER></CENTER></TD></TR></TBODY></TABLE></CENTER><BR><BR><FONT 
+            size=2><B><U>Parallel port 
+            registers</U></B></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            As you know, the Data, Control and status lines are connected to 
+            there corresponding registers inside the computer. So by 
+            manipulating these registers in program , one can easily read or 
+            write to parallel port with programming languages like 'C' and 
+            BASIC.<BR><BR>The registers found in standard parallel port are 
+            ,<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1) data 
+            register<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2) Status 
+            register<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3) Control 
+            register<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            As there names specifies, Data register is connected to Data lines, 
+            Control register is connected to controll lines and Status 
+            lregistyer is connected to Status lines. (Here the word connection 
+            does not mean that there is some physical connection between 
+            data/control/status lines. The registers are virtually connected to 
+            the corresponding lines.). So what ever you write to these registers 
+            , will appear in corresponding lines as voltages, Of course, you can 
+            measure it with a multimeter. And What ever you give to Parallel 
+            port as voltages can be read from these registers(with some 
+            restrictions). For example , if we write '1' to Data register , the 
+            line Data0 will be driven to +5v. Just like this ,we can 
+            programmatically turn on and off any of the data lines and Control 
+            lines. <BR><BR><FONT size=2><B><U>Where these registers are 
+            ?</U></B></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            In an IBM PC, these registers are IO mapped and will have unique 
+            address. We have to find these addresses to to work with parallel 
+            port. For a typical PC , the base address of LPT1 is 0x378 and of 
+            LPT2 is 0x278. The data register resides at this base address , 
+            status register at baseaddress + 1 and the control register is at 
+            baseaddress + 2. So once we have the base address , we can calculate 
+            the address of each registers in this manner. The table below shows 
+            the register addresses of LPT1 and LPT2<BR><BR>
+            <CENTER>
+            <TABLE borderColor=#b0b0b0 border=1>
+              <TBODY>
+              <TR>
+                <TD>Register</TD>
+                <TD>LPT1</TD>
+                <TD>LPT2</TD></TR>
+              <TR>
+                <TD>data registar(baseaddress + 0)</TD>
+                <TD>0x378</TD>
+                <TD>0x278</TD></TR>
+              <TR>
+                <TD>status register (baseaddress + 1)</TD>
+                <TD>0x379</TD>
+                <TD>0x279</TD></TR>
+              <TR>
+                <TD>control register (baseaddress + 2)</TD>
+                <TD>0x37a</TD>
+                <TD>0x27a</TD></TR></TBODY></TABLE></CENTER><BR><BR><FONT 
+            size=2><B><U>Programming 
+            Concepts</U></B></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Almost all programming languages allow programmers to access 
+            parallel port using some library functions. For example , Borland C 
+            is providing "Inportb" and "Outportb" functions to read or write IO 
+            mapped peripherals. But the examples provided here in this tutorial 
+            is written VC++ and can be easily ported to other compilers like 
+            Borland C and Turbo C. Visual Basic does not have any functions or 
+            support to access parallel port directly, but it is possible to add 
+            such capabilities to your VB application by writing a dll in VC++ 
+            and calling its exported functions from VB. VC++ provides two 
+            functions to access IO mapped peripherals, '_inp' for reading and 
+            '_outp' for writing. These functions are declared in 
+            "conio.h".<BR><BR><FONT size=2><B><U>Hardware for testing sample 
+            programs 
+            </U></B></FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            The schematic diagram of the test circuit is shown below. It is 
+            recommended to build this circuit before testing the sample 
+            programs<BR><BR>
+            <CENTER><A 
+            href="PARALLEL PORT INTERFACING TUTORIAL - Logix4u_files/paralleltest.gif"><IMG 
+            height=199 
+            src="PARALLEL PORT INTERFACING TUTORIAL - Logix4u_files/paralleltest.gif" 
+            width=357 border=1> </A></CENTER><BR><BR><B><U><BIG>Sample program 
+            in 
+            VC++</BIG></U></B><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Writing a parallel port interfacing program in VC++ is very easy. 
+            Here is the steps to write your first parallel port interfacing 
+            application in VC++. 
+            <BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Start VC++ IDE , Select 'New' from File menu.Then select “Win32 
+            Console Application” from “Projects” tab(picture-3). enter project 
+            name as “partest1” , then click OK button. <BR><BR>
+            <CENTER><IMG height=397 alt="" 
+            src="PARALLEL PORT INTERFACING TUTORIAL - Logix4u_files/partest1_pic1.gif" 
+            width=480 border=0> <BR>Picture-3 </CENTER><BR><BR>Now you can see a 
+            dialog box with caption “Win32 Console Application - step 1 of 1” 
+            (picture-4).<BR><BR>
+            <CENTER><IMG height=272 alt="" 
+            src="PARALLEL PORT INTERFACING TUTORIAL - Logix4u_files/partest1_pic2.gif" 
+            width=413 border=0><BR>Picture-4 </CENTER><BR><BR>Select “a simple 
+            Application” and click Finish. Now open exaple1.cpp from “fileview” 
+            and replace the existing code with the code given below.<BR>
+            <TABLE border=1>
+              <TBODY>
+              <TR>
+                <TD><PRE><FONT face=courier size=-2>
+#include "stdafx.h"
+#include "conio.h"
+#include "stdio.h"
+#include "string.h"
+#include "stdlib.h"
+
+int main(int argc, char* argv[])
+{
+	short data;
+
+	if(argc&lt;2)
+	{
+		printf("Usage\n\n");
+		printf("partest1.exe <READ write>,<PORTADDRESS Decimal in>,<DATA Decimal in>\n\n\n");
+		return 0;
+	}
+	
+	if(!strcmp(argv[1],"read"))
+	{
+		data = _inp(atoi(argv[2])); 
+		printf("Data read from parallel port is  ");
+		printf("%d\n\n\n\n",data);
+	}
+	
+	if(!strcmp(argv[1],"write"))
+	{
+		_outp(atoi(argv[2]),atoi(argv[3])); 
+		printf("Data written to parallel port is  ");
+		printf("%s\n\n\n\n\n",argv[3]);
+	}
+	return 0;
+}
+ </FONT>
+  </PRE></TD></TR></TBODY></TABLE><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Build the project and copy partest1.exe to "c:\". 
+            <BR><BR><BIG><U><B>How to Test The Program 
+            ?</B></U></BIG><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Connect The assembled hardware shown above to your PC's parallel 
+            port. Open DOS command window Move to "C:\" and type "partest1 write 
+            888 255" and press enter. If everything is correct , LED1 to LED8 in 
+            the hardware will glow. You may be doubtful about the command line 
+            parameters passed to the program. Here 888(0x378) is the address of 
+            the parallel port data register and 255 is the data to be written to 
+            parallel port data register. if you enter "partest1 read 888" to 
+            command line , the program will read parallel port data register and 
+            display it. This will blindly read the contents of parallel port 
+            data register , but not the data present on data lines. To read the 
+            data from the data lines , we will have to enable the bidirectional 
+            data transfer first. To enable Biirectional data transfer just set 
+            the "Bidirectional" bit (bit 5) in control register. This is done by 
+            writing 32 to control register. The command "partest1 write 890 32" 
+            will do this. After entering this command you can read the status of 
+            switches in the hardware using the command "partest1 read 888" 
+            <BR><BR><FONT color=#fc4f36>NOTE: This sample program will not work 
+            on Windows NT/2000 or XP if you run the program on these machines , 
+            it will show an error. use new <A 
+            href="http://www.logix4u.net/inpout32.htm">Inpout32.dll</A> on 
+            NT/2000/XP machines</FONT><BR><BR>
+            <HR>
+          </TD></TR>
+        <TR>
+          <TD>
+            <CENTER><A 
+            href="http://www.fineclicks.com/fc2/click.php?sid=11552&amp;pid=1303&amp;bid=5657"><IMG 
+            height=60 
+            src="PARALLEL PORT INTERFACING TUTORIAL - Logix4u_files/468stop.gif" 
+            width=468 border=1></A> </CENTER></TD></TR></TBODY></TABLE></P></TD>
+    <TD vAlign=top align=right width=105>
+      <TABLE 
+      style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-SIZE: xx-small; BACKGROUND: #fafafa; BORDER-LEFT: black 1px solid; COLOR: black; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Arial" 
+      cellSpacing=0 cellPadding=5 width=100>
+        <TBODY>
+        <TR>
+          <TD><IFRAME marginWidth=0 marginHeight=0 
+            src="PARALLEL PORT INTERFACING TUTORIAL - Logix4u_files/cm.htm" 
+            frameBorder=0 width=120 scrolling=no 
+            height=600>
+
+
+<MAP NAME="boxmap-p11"><AREA SHAPE="RECT" COORDS="13, 588, 102, 600" HREF="http://rcm.amazon.com/e/cm/privacy-policy.html?o=1" ><AREA COORDS="0,0,10000,10000" HREF="http://www.amazon.com/exec/obidos/redirect-home/logix4u-20" ></MAP><img src="http://rcm-images.amazon.com/images/G/01/rcm/120x600.gif" width="120" height="600" border="0" usemap="#boxmap-p11" alt="Shop at Amazon.com">
+
+
+</IFRAME></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD>
+      <TABLE 
+      style="BORDER-RIGHT: black 0px solid; BORDER-TOP: black 0px solid; FONT-SIZE: xx-small; BACKGROUND: #eeeeee; BORDER-LEFT: black 0px solid; COLOR: black; BORDER-BOTTOM: black 0px solid; FONT-FAMILY: Arial" 
+      cellSpacing=0 width=100>
+        <TBODY>
+        <TR>
+          <TD></TD></TR></TBODY></TABLE></TD>
+  <TR></TR></TBODY></TABLE>
+<TABLE 
+style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-SIZE: xx-small; BACKGROUND: #fafafa; BORDER-LEFT: black 1px solid; COLOR: black; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Arial" 
+cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+    <TD align=middle>This site page can be viewed best in MSIE 4 or later, 
+      with 800 X 600 screen 
+resolution</TD></TD></TR></TBODY></TABLE></TR></BODY></HTML>

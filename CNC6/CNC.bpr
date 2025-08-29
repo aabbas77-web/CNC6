@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.05.03"/>
+    <PROJECT value="CNC.exe"/>
+    <OBJFILES value="CNC.obj Main.obj About.obj CadApi.obj cad_Events.obj 
+      ..\ShapeProcessor\shp_Contour.obj Options.obj Simulator.obj CNCLib.obj 
+      Export.obj"/>
+    <RESFILES value="CNC.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) Main.dfm About.dfm Options.dfm Simulator.dfm Export.dfm"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="CPORTLIBCB5.lib FormTranslation5.lib bcbsmp50.lib Vclmid50.lib inet50.lib 
+      inetdb50.lib WEBMID50.lib vclbde50.lib QRPT50.lib VCLDB50.lib VCLX50.lib 
+      Vcl50.lib"/>
+    <SPARELIBS value="Vcl50.lib VCLX50.lib VCLDB50.lib QRPT50.lib vclbde50.lib WEBMID50.lib 
+      inetdb50.lib inet50.lib Vclmid50.lib bcbsmp50.lib FormTranslation5.lib 
+      CPORTLIBCB5.lib"/>
+    <PACKAGES value="Vcl50.bpi Vclx50.bpi bcbsmp50.bpi Vcldb50.bpi vclado50.bpi ibsmp50.bpi 
+      VCLBDE50.bpi vcldbx50.bpi Qrpt50.bpi TeeUI50.bpi TeeDB50.bpi Tee50.bpi 
+      Dss50.bpi TeeQR50.bpi VCLIB50.bpi Vclmid50.bpi vclie50.bpi Inetdb50.bpi 
+      Inet50.bpi NMFast50.bpi webmid50.bpi bcbie50.bpi dclocx50.bpi 
+      bcb2kaxserver50.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="tlink32"/>
+    <USERDEFINES value="_DEBUG"/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="CNC.cpp"/>
+    <INCLUDEPATH value="..\ShapeProcessor;..\Communications\communications;&quot;O:\Copy Protection\AliSoft\Protection\&quot;;..\ProtectionLib\Protection;&quot;C:\Program Files\Borland\CBuilder5\Projects\&quot;;$(BCB)\include;$(BCB)\include\vcl;E:\Halftone\Halftone\TFormTranslation\;L:\Halftone\Halftone\TFormTranslation\;..\TFormTranslation;..\communications"/>
+    <LIBPATH value="..\ShapeProcessor;..\Communications\communications;&quot;O:\Copy Protection\AliSoft\Protection\&quot;;..\ProtectionLib\Protection;L:\Halftone\Halftone\TFormTranslation\;&quot;C:\Program Files\Borland\CBuilder5\Projects\&quot;;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\TFormTranslation;..\communications"/>
+    <WARNINGS value="-w-par"/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I..\ShapeProcessor -I..\Communications\communications 
+      -I&quot;O:\Copy Protection\AliSoft\Protection\.&quot; -I..\ProtectionLib\Protection 
+      -I&quot;C:\Program Files\Borland\CBuilder5\Projects\.&quot; -I$(BCB)\include 
+      -I$(BCB)\include\vcl -IE:\Halftone\Halftone\TFormTranslation\. 
+      -IL:\Halftone\Halftone\TFormTranslation\. -I..\TFormTranslation 
+      -I..\communications -src_suffix cpp -D_DEBUG -boa"/>
+    <CFLAG1 value="-Od -H=$(BCB)\lib\vcl50.csm -Hc -Vx -Ve -X- -r- -a8 -b- -k -y -v -vi- -c 
+      -tW -tWM"/>
+    <PFLAGS value="-$Y+ -$W -$O- -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zi"/>
+    <LFLAGS value="-D&quot;&quot; -aa -Tpe -x -Gn -v"/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+  </LINKER>
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=10241
+CodePage=1256
+
+[Version Info Keys]
+CompanyName=AliSoft
+FileDescription=AliSoft CNC V1.0
+FileVersion=1.0.0.0
+InternalName=CNC V1.0
+LegalCopyright=???
+LegalTrademarks=! ! !
+OriginalFilename=CNC.exe
+ProductName=CNC
+ProductVersion=1.0.0.0
+Comments=Generate And Process CAD Files...
+Programmed By=Ali Abbas
+E-Mail=aabbas77@yahoo.com
+Mobile=+963 93 883674
+Address=Syria - Damascus - Barzeh
+Compatibility=WinMe,WinNTx,Win2000,WinXP Compatible
+
+[HistoryLists\hlIncludePath]
+Count=15
+Item0=..\ShapeProcessor;..\Communications\communications;O:\Copy Protection\AliSoft\Protection\;..\ProtectionLib\Protection;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;E:\Halftone\Halftone\TFormTranslation\;L:\Halftone\Halftone\TFormTranslation\;..\TFormTranslation;..\communications
+Item1=..\ShapeProcessor;..\Communications\communications;O:\Copy Protection\AliSoft\Protection\;..\ProtectionLib\Protection;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;E:\Halftone\Halftone\TFormTranslation\;L:\Halftone\Halftone\TFormTranslation\;..\TFormTranslation;D:\Ali\Digitizer\communications
+Item2=..\ShapeProcessor;..\Communications\communications;O:\Copy Protection\AliSoft\Protection\;..\ProtectionLib\Protection;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;E:\Halftone\Halftone\TFormTranslation\;L:\Halftone\Halftone\TFormTranslation\;..\TFormTranslation
+Item3=..\Communications\communications;O:\Copy Protection\AliSoft\Protection\;..\ProtectionLib\Protection;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;E:\Halftone\Halftone\TFormTranslation\;L:\Halftone\Halftone\TFormTranslation\;..\TFormTranslation
+Item4=O:\Copy Protection\AliSoft\Protection\;..\ProtectionLib\Protection;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;E:\Halftone\Halftone\TFormTranslation\;L:\Halftone\Halftone\TFormTranslation\;..\TFormTranslation
+Item5=O:\Copy Protection\AliSoft\Protection\;..\ProtectionLib\Protection;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;E:\Halftone\Halftone\TFormTranslation\;..\..\..\Halftone\Halftone\TFormTranslation;L:\CNC\TFormTranslation
+Item6=O:\Copy Protection\AliSoft\Protection\;..\ProtectionLib\Protection;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;E:\Halftone\Halftone\TFormTranslation\;..\..\..\Halftone\Halftone\TFormTranslation
+Item7=O:\Copy Protection\AliSoft\Protection\;..\ProtectionLib\Protection;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;E:\Halftone\Halftone\TFormTranslation\;F:\Ali\Digitizer\Halftone\Halftone\TFormTranslation
+Item8=O:\Copy Protection\AliSoft\Protection\;..\ProtectionLib\Protection;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;E:\Halftone\Halftone\TFormTranslation\
+Item9=O:\Copy Protection\AliSoft\Protection;..\ProtectionLib\Protection;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;E:\Halftone\Halftone\TFormTranslation\
+Item10=..\ProtectionLib\Protection;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl;E:\Halftone\Halftone\TFormTranslation
+Item11=..\ProtectionLib\Protection;..\..\..\Halftone\Halftone\TFormTranslation;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl
+Item12=C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\include;$(BCB)\include\vcl
+Item13=C:\Program Files\Borland\CBuilder5\Projects;$(BCB)\include;$(BCB)\include\vcl
+Item14=$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=12
+Item0=..\ShapeProcessor;..\Communications\communications;O:\Copy Protection\AliSoft\Protection\;..\ProtectionLib\Protection;L:\Halftone\Halftone\TFormTranslation\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\TFormTranslation;..\communications
+Item1=..\ShapeProcessor;..\Communications\communications;O:\Copy Protection\AliSoft\Protection\;..\ProtectionLib\Protection;L:\Halftone\Halftone\TFormTranslation\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\TFormTranslation;D:\Ali\Digitizer\communications
+Item2=..\ShapeProcessor;..\Communications\communications;O:\Copy Protection\AliSoft\Protection\;..\ProtectionLib\Protection;L:\Halftone\Halftone\TFormTranslation\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\TFormTranslation
+Item3=..\Communications\communications;O:\Copy Protection\AliSoft\Protection\;..\ProtectionLib\Protection;L:\Halftone\Halftone\TFormTranslation\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\TFormTranslation
+Item4=O:\Copy Protection\AliSoft\Protection\;..\ProtectionLib\Protection;L:\Halftone\Halftone\TFormTranslation\;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;..\TFormTranslation
+Item5=O:\Copy Protection\AliSoft\Protection\;..\ProtectionLib\Protection;..\..\..\Halftone\Halftone\TFormTranslation;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib;L:\CNC\TFormTranslation
+Item6=O:\Copy Protection\AliSoft\Protection\;..\ProtectionLib\Protection;..\..\..\Halftone\Halftone\TFormTranslation;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item7=O:\Copy Protection\AliSoft\Protection;..\ProtectionLib\Protection;..\..\..\Halftone\Halftone\TFormTranslation;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item8=..\ProtectionLib\Protection;..\..\..\Halftone\Halftone\TFormTranslation;C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item9=C:\Program Files\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item10=C:\Program Files\Borland\CBuilder5\Projects;$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+Item11=$(BCB)\Projects\Lib;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=5
+Item0=_DEBUG
+Item1=_PROTECTED_
+Item2=_DEMO_
+Item3=_PROTECTED_;_DEBUG
+Item4=_DEMO_;_DEBUG
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=1
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

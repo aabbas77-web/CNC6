@@ -1,0 +1,1 @@
+Copy "CPort.hpp" to <communications> folder after installig the package

@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0035)http://www.logix4u.net/inpout32.htm -->
+<HTML><HEAD><TITLE>Inpout32.dll for WIN NT/2000/XP - Logix4u</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META 
+content="parallel ,port ,interfacing ,windows , NT ,2000 , lpt , driver , inp , outp , inpout , VB , visual basic , vc++ , visual c++ , dll , xp" 
+name=keywords>
+<META 
+content="new inpout32.dll for windows nt / 2000 . this dll will solve the problems aring from the use of Inp() and Outp() functions in WIN NT" 
+name=description>
+<STYLE type=text/css>BODY {
+	FONT-SIZE: xx-small; BACKGROUND: #eeeeee; COLOR: black; FONT-FAMILY: Arial
+}
+.hand {
+	CURSOR: hand
+}
+A:link {
+	COLOR: blue; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: blue; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: red; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+.1a {
+	FONT-WEIGHT: bold; FONT-SIZE: 18pt; COLOR: white; TEXT-DECORATION: none
+}
+</STYLE>
+
+<SCRIPT language=JavaScript>
+	<!--
+		function Menu(wich)
+		{
+			// silver is the background color of the mouseover of the menu
+			wich.style.background = 'silver';
+			// Blue is the color of the text of the mouseoverof the menu
+			wich.style.color = 'blue';
+		}
+		function MenuOut(wich)
+		{
+			wich.style.background = '';
+			wich.style.color = 'black';
+		}
+		function ChangePage(url)
+		{
+			window.location.href = url;
+		}
+	//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY bottomMargin=0 leftMargin=1 topMargin=1 rightMargin=1 marginheight="1" 
+marginwidth="1">
+<TABLE cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width=105>
+      <TABLE 
+      style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-SIZE: xx-small; BACKGROUND: #fafafa; BORDER-LEFT: black 1px solid; COLOR: black; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Arial" 
+      cellSpacing=0 cellPadding=5 width=110 border=1>
+        <TBODY>
+        <TR>
+          <TD 
+          style="FONT-WEIGHT: bold; FONT-SIZE: 9pt; BACKGROUND: #2f97cf repeat-y right 50%; COLOR: white; BORDER-BOTTOM: black 1px solid">Contents 
+          </TD></TR>
+        <TR>
+          <TD class=hand id=m10 onmouseover=Menu(m10) 
+          onclick="ChangePage('index.htm')" onmouseout=MenuOut(m10)>Home</TD></TR>
+        <TR>
+          <TD class=hand id=m20 onmouseover=Menu(m20) 
+          onclick="ChangePage('parallelport1.htm')" 
+            onmouseout=MenuOut(m20)>Parallel Port</TD></TR>
+        <TR>
+          <TD class=hand id=m30 onmouseover=Menu(m30) 
+          onclick="ChangePage('dll_tutorial1.htm')" 
+            onmouseout=MenuOut(m30)>DLL Tutorial</TD></TR>
+        <TR>
+          <TD class=hand id=m60 onmouseover=Menu(m60) 
+          onclick="ChangePage('inpout32.htm')" 
+          onmouseout=MenuOut(m60)>Inpout32</TD></TR>
+        <TR>
+          <TD class=hand id=m50 onmouseover=Menu(m50) 
+          onclick="ChangePage('/logixstore/activex.php')" 
+          onmouseout=MenuOut(m50)><FONT color=red size=2><B>Download/Buy 
+            Activex Controls</B></FONT></TD></TR>
+        <TR>
+          <TD><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></TD></TR>
+        <TR>
+          <TD>
+            <CENTER><A 
+            href="http://www.fineclicks.com/fc2/referral.cfm?refhost=logix4u"><IMG 
+            height=125 
+            src="Inpout32_dll for WIN NT-2000-XP - Logix4u_files/125x125_2.gif" 
+            width=125 border=0></A> </CENTER></TD></TR></TBODY></TABLE></TD>
+    <TD style="FONT-SIZE: xx-small; FONT-FAMILY: Arial" vAlign=top>
+      <TABLE 
+      style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-SIZE: xx-small; BACKGROUND: #2f97cf; BORDER-LEFT: black 1px solid; COLOR: black; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Arial" 
+      cellSpacing=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD>
+            <P class=1a align=left>Logix4u 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
+            href="http://www.logix4u.net/">http://www.logix4u.net/</A></P></TD></TR></TBODY></TABLE>
+      <P>
+      <TABLE 
+      style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-SIZE: 10pt; BACKGROUND: #fafafa; BORDER-LEFT: black 1px solid; COLOR: black; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Arial" 
+      cellSpacing=0 cellPadding=5 width="100%">
+        <TBODY>
+        <TR>
+          <TD 
+          style="FONT-WEIGHT: bold; FONT-SIZE: 10pt; BACKGROUND: #2f97cf repeat-y right 50%; COLOR: white; BORDER-BOTTOM: black 1px solid">Inpout32.dll 
+            for WIN NT/2000/XP </TD></TR>
+        <TR>
+          <TD><!main document here><BIG><B><U>The 
+            Problem</U></B></BIG><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Writing programs to talk with parallel port was pretty easy in old 
+            DOS days and in Win95/98 too. We can use Inporb and outportb or 
+            _inp() or _Outp functions in our program without any problem if we 
+            are running the program on Dos or WIN95/98. But entering to the new 
+            era of NT clone operating systems like WIN NT4, WIN2000, WINXP, all 
+            this simplicity goes away. Being interested in Parallel port 
+            interfacing and programming you might have experienced the problems 
+            in writing a program that can talk to parallel port successfully in 
+            NT based operating systems. When we are trying to run a program 
+            which is written using the the conventional software functions like 
+            Inporb, outportb, _inp() or _Outp on a WINNT or WIN2000 system, it 
+            will show an error message that "The exception privileged 
+            instruction occurred in the application at location ....". The 
+            picture of such a messagebox is given below.<BR><BR>
+            <CENTER><IMG height=151 alt="" 
+            src="Inpout32_dll for WIN NT-2000-XP - Logix4u_files/parerror.gif" 
+            width=393 border=0> 
+            </CENTER><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Staring to this messagebox, you might have been thinking that "did i 
+            make a mistake in my program ?" it is working fine on WIN98 ... Who 
+            is guilty here. 'Nobody' that is the answer. Then why it is 
+            happening like this ..? The answer is in the next 
+            paragraph<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Being a very secure operating system, Windows NT assigns some 
+            privileges and restrictions to different types of programs running 
+            on it.It classifies all the programs in to two categories , User 
+            mode and Kernel mode ie; running in ring3 and ring0 modes. user mode 
+            programs are running in ring3 mode and Kernel mode programs are 
+            running in ring0 mode. The programs you generally write falls in the 
+            user mode category. The user mode programs are restricted to use 
+            certain instructions like IN, OUT etc.. Whenever the operating 
+            system find that a user mode program is trying to execute such 
+            instructions , the operating system stops execution of those 
+            programs and will display an error message. Eventually our 
+            interfacing programs stops where they are executing IN or OUT 
+            instructions to read or write data to parallel port. But in the same 
+            time Kernel mode programs are in no way restricted in executing such 
+            instructions. Device drivers are capable of running in kernel mode. 
+            So the workaround for the above stated problem is to write a kernel 
+            mode driver capable of reading and writing data to parallel port and 
+            let the user mode program to communicate with it. Writing a driver 
+            is not an easy job for even experienced programmers. But writing a 
+            simple driver for communicating with parallel port is a simple task 
+            when drivers like USB, sound card etc.. are concerned. Even though 
+            you get a working driver from somewhere else, installing and 
+            configuring it can be very cumbersome task. <BR><BR><BIG><B><U>The 
+            Solution 
+            </U></B></BIG><BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Introducing Inpout32.dll for WIN 98/NT/2000/XP. This dll have the 
+            following features<BR><BR>1) Works seamless with all versions of 
+            windows (WIN 98, NT, 200 and XP)<BR><BR>2) Using a kernel mode 
+            driver embedded in the dll<BR><BR>3) No special software or driver 
+            installation required<BR><BR>4) Driver will be automatically 
+            installed and configured automatically when the dll is 
+            loaded<BR><BR>5) No special APIs required only two functions Inp32 
+            and Out32<BR><BR>6) Can be easily used with VC++ and VB<BR><BR>7) 
+            Functions are compatible with Jan Axelsons Inpout32.dll (available 
+            at <A 
+            href="http://www.lvr.com/parport.htm">http://www.lvr.com/parport.htm</A>). 
+            So this dll can be used with the <A 
+            href="http://www.lvr.com/files/ppc.zip">sample programs</A> 
+            available with the book Parallel Port Complete without any 
+            modification. You can find some code samples. <BR><BR><B><A 
+            href="http://www.hytherion.com/beattidp/comput/pport.htm" 
+            target=-blank>Click here</A> for a sample program written for 
+            Borland C++ command line compiler, by Douglas Beattie Jr. 
+            </B><BR><BR>
+            <CENTER><FONT face="arial black" size=4><B><A 
+            href="http://www.logix4u.net/inpout_theory.htm">How Inpout32.dll 
+            Works</A></B></FONT><BR><BR><FONT face="arial black" size=4><B><A 
+            href="http://www.logix4u.net/inpout32_source_and_bins.zip">Download 
+            Inpout32.dll and source code here</A></B></FONT><BR><BR></CENTER>
+        <TR>
+          <TD>
+            <CENTER><A 
+            href="http://www.logix4u.net/logixstore/activex.php"><FONT color=red 
+            size=4><B>Download/Buy Activex Controls</A></B></FONT> 
+        </CENTER></TD></TR>
+        <TR>
+          <TD>
+            <CENTER><A 
+            href="http://www.fineclicks.com/fc2/click.php?sid=11552&amp;pid=834&amp;bid=3510"><IMG 
+            height=60 
+            src="Inpout32_dll for WIN NT-2000-XP - Logix4u_files/banner3.gif" 
+            width=468 border=0></A> 
+    </CENTER></TD></TR></TD></TR></TBODY></TABLE></P></TD>
+    <TD vAlign=top align=right width=105>
+      <TABLE 
+      style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-SIZE: xx-small; BACKGROUND: #fafafa; BORDER-LEFT: black 1px solid; COLOR: black; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Arial" 
+      cellSpacing=0 cellPadding=5 width=100>
+        <TBODY>
+        <TR><IFRAME marginWidth=0 marginHeight=0 
+          src="Inpout32_dll for WIN NT-2000-XP - Logix4u_files/cm.htm" 
+          frameBorder=0 width=120 scrolling=no 
+          height=600>
+
+
+<MAP NAME="boxmap-p11"><AREA SHAPE="RECT" COORDS="13, 588, 102, 600" HREF="http://rcm.amazon.com/e/cm/privacy-policy.html?o=1" ><AREA COORDS="0,0,10000,10000" HREF="http://www.amazon.com/exec/obidos/redirect-home/logix4u-20" ></MAP><img src="http://rcm-images.amazon.com/images/G/01/rcm/120x600.gif" width="120" height="600" border="0" usemap="#boxmap-p11" alt="Shop at Amazon.com">
+
+
+</IFRAME></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD>
+      <TABLE 
+      style="BORDER-RIGHT: black 0px solid; BORDER-TOP: black 0px solid; FONT-SIZE: xx-small; BACKGROUND: #eeeeee; BORDER-LEFT: black 0px solid; COLOR: black; BORDER-BOTTOM: black 0px solid; FONT-FAMILY: Arial" 
+      cellSpacing=0 width=100>
+        <TBODY>
+        <TR>
+          <TD></TD></TR></TBODY></TABLE></TD>
+    <TD></TD>
+  <TR></TR></TBODY></TABLE>
+<TABLE 
+style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-SIZE: xx-small; BACKGROUND: #fafafa; BORDER-LEFT: black 1px solid; COLOR: black; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Arial" 
+cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+    <TD align=middle>This site website can be wiewed best in MSIE 4 or later, 
+      with 800 X 600 screen 
+resolution</TD></TD></TR></TBODY></TABLE></TR><BR><BR></BODY></HTML>

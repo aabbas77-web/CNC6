@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0040)http://www.logix4u.net/inpout_theory.htm --><HTML><HEAD><TITLE>Logix4u</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META 
+content="parallel ,port ,interfacing ,windows , NT ,2000 , lpt , driver , inp , outp , inpout , VB , visual basic , vc++ , visual c++ , dll , xp" 
+name=keywords>
+<META 
+content="new inpout32.dll for windows nt / 2000 . this dll will solve the problems aring from the use of Inp() and Outp() functions in WIN NT" 
+name=description>
+<STYLE type=text/css>BODY {
+	FONT-SIZE: xx-small; BACKGROUND: #eeeeee; COLOR: black; FONT-FAMILY: Arial
+}
+.hand {
+	CURSOR: hand
+}
+A:link {
+	COLOR: blue; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: blue; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: red; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+.1a {
+	FONT-WEIGHT: bold; FONT-SIZE: 18pt; COLOR: white; TEXT-DECORATION: none
+}
+</STYLE>
+
+<SCRIPT language=JavaScript>
+	<!--
+		function Menu(wich)
+		{
+			// silver is the background color of the mouseover of the menu
+			wich.style.background = 'silver';
+			// Blue is the color of the text of the mouseoverof the menu
+			wich.style.color = 'blue';
+		}
+		function MenuOut(wich)
+		{
+			wich.style.background = '';
+			wich.style.color = 'black';
+		}
+		function ChangePage(url)
+		{
+			window.location.href = url;
+		}
+	//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY bottomMargin=0 leftMargin=1 topMargin=1 rightMargin=1 marginwidth="1" 
+marginheight="1">
+<TABLE cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width=105>
+      <TABLE 
+      style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-SIZE: xx-small; BACKGROUND: #fafafa; BORDER-LEFT: black 1px solid; COLOR: black; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Arial" 
+      cellSpacing=0 cellPadding=5 width=110 border=1>
+        <TBODY>
+        <TR>
+          <TD 
+          style="FONT-WEIGHT: bold; FONT-SIZE: 9pt; BACKGROUND: #2f97cf repeat-y right 50%; COLOR: white; BORDER-BOTTOM: black 1px solid">Contents 
+          </TD></TR>
+        <TR>
+          <TD class=hand id=m10 onmouseover=Menu(m10) 
+          onclick="ChangePage('index.htm')" onmouseout=MenuOut(m10)>Home</TD></TR>
+        <TR>
+          <TD class=hand id=m20 onmouseover=Menu(m20) 
+          onclick="ChangePage('parallelport1.htm')" 
+            onmouseout=MenuOut(m20)>Parallel Port</TD></TR>
+        <TR>
+          <TD class=hand id=m30 onmouseover=Menu(m30) 
+          onclick="ChangePage('dll_tutorial1.htm')" 
+            onmouseout=MenuOut(m30)>DLL Tutorial</TD></TR>
+        <TR>
+          <TD class=hand id=m60 onmouseover=Menu(m60) 
+          onclick="ChangePage('inpout32.htm')" 
+          onmouseout=MenuOut(m60)>Inpout32</TD></TR>
+        <TR>
+          <TD class=hand id=m50 onmouseover=Menu(m50) 
+          onclick="ChangePage('/logixstore/activex.php')" 
+          onmouseout=MenuOut(m50)><FONT color=red size=2><B>Download/Buy 
+            Activex Controls</B></FONT></TD></TR>
+        <TR>
+          <TD><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></TD></TR>
+        <TR>
+          <TD>
+            <CENTER><A 
+            href="http://www.fineclicks.com/fc2/referral.cfm?refhost=logix4u"><IMG 
+            height=125 src="Inpout_theory_files/125x125_2.gif" width=125 
+            border=0></A> </CENTER></TD></TR></TBODY></TABLE></TD>
+    <TD style="FONT-SIZE: xx-small; FONT-FAMILY: Arial" vAlign=top>
+      <TABLE 
+      style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-SIZE: xx-small; BACKGROUND: #2f97cf; BORDER-LEFT: black 1px solid; COLOR: black; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Arial" 
+      cellSpacing=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD>
+            <P class=1a align=left>Logix4u 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
+            href="http://www.logix4u.net/">http://www.logix4u.net/</A></P></TD></TR></TBODY></TABLE>
+      <P>
+      <TABLE 
+      style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-SIZE: 10pt; BACKGROUND: #fafafa; BORDER-LEFT: black 1px solid; COLOR: black; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Arial" 
+      cellSpacing=0 cellPadding=5 width="100%">
+        <TBODY>
+        <TR>
+          <TD 
+          style="FONT-WEIGHT: bold; FONT-SIZE: 10pt; BACKGROUND: #2f97cf repeat-y right 50%; COLOR: white; BORDER-BOTTOM: black 1px solid">How 
+            Inpout32.dll works </TD></TR>
+        <TR>
+          <TD>If you don't know what is Inpout32.dll, please <A 
+            href="http://www.logix4u.net/inpout32.htm">read it here</A> and then 
+            continue.<BR><BR><B><U>How it works </U></B><BR><BR>The outstanding 
+            feature of Inpout32.dll is , it can work with all the windows 
+            versions without any modification in user code or the DLL itself. 
+            This tutorial describes how it is achieved, what programming methods 
+            used, what are the APIs used, etc.... The Dll will check the 
+            operating system version when functions are called, and if the 
+            operating system is WIN9X, the DLL will use _inp() and _outp 
+            functions for reading/writing the parallel port. On the other hand, 
+            if the operating system is WIN NT, 2000 or XP, it will install a 
+            kernel mode driver and talk to parallel port through that driver. 
+            The user code will not be aware of the OS version on which it is 
+            running. This DLL can be used in WIN NT clone operating systems as 
+            if it is WIN9X. The flow chart of the program is given below. 
+            <BR><BR><IMG height=378 alt="" 
+            src="Inpout_theory_files/inp_th_flow.gif" width=440 
+            border=0><BR><BR>The two important building blocks of this program 
+            are<BR><BR>1) A kernel mode device driver embedded in the DLL in 
+            binary form<BR><BR>2) The DLL itself<BR><BR><B><U>Kernel mode driver 
+            Hwinterface.sys </U></B><BR><BR>The source code of Hwinterface.sys 
+            kernel mode driver is located in "kernel_mode_driver_source" 
+            directory. Where "hwinterfacedrv.c" is the main application source 
+            file. Three functions implemented in the driver are <BR><BR>1) 
+            'DriverEntry' , Called when driver is loaded. Creates device object 
+            and symbolic links.<BR><BR>2) 'hwinterfaceUnload', Called when 
+            driver is unloaded, performs clean up<BR><BR>3) 
+            'hwinterfaceDeviceControl', handles calls made through 
+            DeviceIOControl API. Performs reading writing to the parallel port 
+            according to the control code passed.<BR><BR><B><U>The DLL 
+            Inpout32</U></B><BR><BR>The functions in the DLL are implemented in 
+            two source files, "inpout32drv.cpp" and "osversion.cpp". 
+            osversion.cpp checks the version of operating system. 
+            "inpout32drv.cpp" does installing the kernel mode driver, loading it 
+            , writing/ reading parallel port etc... The two functions exported 
+            from inpout32.dll are<BR><BR>1) 'Inp32', reads data from a specified 
+            parallel port register.<BR><BR>2) 'Out32', writes data to specified 
+            parallel port register.<BR><BR>the other functions implemented in 
+            Inpout32.dll are <BR><BR>1) 'DllMain', called when dll is loaded or 
+            unloaded. When the dll is loaded , it checks the OS version and 
+            loads hwinterface.sys if needed.<BR><BR>2) 'Closedriver', close the 
+            opened driver handle. called before unloading the driver.<BR><BR>3) 
+            'Opendriver', open a handle to hwinterface driver.<BR><BR>4) 'inst' 
+            , Extract 'hwinterface.sys' from binary resource to 
+            'systemroot\drivers' directory and creates a service. This function 
+            is called when 'Opendriver' function fails to open a valid handle to 
+            'hwinterface' service.<BR><BR>5) 'start' , starts the hwinterface 
+            service using Service Control Manager APIs.<BR><BR>6) 
+            'SystemVersion' Checks the OS version and returns appropriate 
+            code.<BR><BR><B><U>What is hwinterface.ocx ActiveX control 
+            </U></B><BR><BR>It is an activex control with same features of 
+            Inpout32.dll. It can be used either with VC++ or VB. But it gives 
+            great convenience when used with VB. Data can be written to parallel 
+            port using Outport method and can be read using Inport 
+            method.<BR><BR>
+            <CENTER><FONT face="arial black" size=2><B>Download Inpout32.dll and 
+            source code here</B></FONT><BR><BR></CENTER><B><U>Useful 
+            links</U></B><BR><BR><A 
+            href="http://www.cmkrnl.com/faq.html">Windows NT/Windows 2000/WDM 
+            Driver FAQ by Jamie E. Hanrahan </A><BR><BR><A 
+            href="http://www.amazon.com/exec/obidos/ASIN/0735618038/logix4u-20">Programming 
+            Windows Driver Model by Walter Oney </A><BR><BR>Details of all the 
+            APIs used is available at <A 
+            href="http://www.logix4u.net/msdn.microsoft.com">MSDN Online</A> 
+            <HR>
+          </TD></TR>
+        <TR>
+          <TD>
+            <CENTER><A 
+            href="http://www.fineclicks.com/fc2/click.php?sid=11552&amp;pid=1091&amp;bid=4505"><IMG 
+            height=60 src="Inpout_theory_files/banner.gif" width=468 
+            border=1></A> </CENTER></TD></TR></TBODY></TABLE></P></TD>
+    <TD vAlign=top align=right width=105>
+      <TABLE 
+      style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-SIZE: xx-small; BACKGROUND: #fafafa; BORDER-LEFT: black 1px solid; COLOR: black; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Arial" 
+      cellSpacing=0 cellPadding=5 width=100>
+        <TBODY>
+        <TR>
+          <TD width=120 height=600 marginwidth="0" marginheight="0" <iframe 
+          scrolling="no" frameborder="0" 
+          src="http://rcm.amazon.com/e/cm?t=logix4u-20&amp;l=st1&amp;search=parallel%20port&amp;mode=books&amp;p=11&amp;o=1&amp;bg1=fafafa&amp;f=ifr"><MAP 
+            name=boxmap-p11><AREA shape=RECT coords=13,588,102,600 
+              href="http://rcm.amazon.com/e/cm/privacy-policy.html?o=1"><AREA 
+              shape=RECT coords=0,0,10000,10000 
+              href="http://www.amazon.com/exec/obidos/redirect-home/logix4u-20"></MAP><IMG 
+            height=600 alt="Shop at Amazon.com" 
+            src="Inpout_theory_files/120x600.gif" width=120 useMap=#boxmap-p11 
+            border=0> </IFRAME></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD>
+      <TABLE 
+      style="BORDER-RIGHT: black 0px solid; BORDER-TOP: black 0px solid; FONT-SIZE: xx-small; BACKGROUND: #eeeeee; BORDER-LEFT: black 0px solid; COLOR: black; BORDER-BOTTOM: black 0px solid; FONT-FAMILY: Arial" 
+      cellSpacing=0 width=100>
+        <TBODY>
+        <TR>
+          <TD></TD></TR></TBODY></TABLE></TD>
+    <TD></TD>
+  <TR></TR></TBODY></TABLE>
+<TABLE 
+style="BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; FONT-SIZE: xx-small; BACKGROUND: #fafafa; BORDER-LEFT: black 1px solid; COLOR: black; BORDER-BOTTOM: black 1px solid; FONT-FAMILY: Arial" 
+cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD>
+    <TD align=middle>This site website can be wiewed best in MSIE 4 or later, 
+      with 800 X 600 screen 
+resolution</TD></TD></TR></TBODY></TABLE></TR></BODY></HTML>
