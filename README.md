@@ -7,6 +7,6 @@
 
 **CNC Machine**
 
-[![CNC Machine](https://github.com/aabbas77-web/Abraj/releases/download/FirstRelease/AbrajVideo.png)](https://www.youtube.com/watch?v=hzpGa4HKkgg)
+[![CNC Machine](https://github.com/aabbas77-web/CNC6/releases/download/FirstRelease/CNC6Video.png)](https://www.youtube.com/watch?v=69bZtoHsPco)
 
 
